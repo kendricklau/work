@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  scroll-behavior: smooth;
+  --old-money: 115 124 104; /* Sage/olive green */
+}
+
+body {
+  font-feature-settings: "liga" 1, "ss01" 1, "ss02" 1, "ss03" 1;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--old-money));
+  border-radius: 0;
+}
+
+/* Hover effect for product images */
+.product-hover {
+  position: relative;
+}
+
+.product-hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgb(var(--old-money));
+  mix-blend-mode: color;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-hover:hover::after {
+  opacity: 0.2;
+}
+
