@@ -81,7 +81,7 @@ export default function LandingPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative h-[60vh] lg:h-auto"
           >
-            <Image src="/placeholder.svg" alt="Hero Image" layout="fill" objectFit="cover" className="grayscale" />
+            <Image src="/img/image.jpg" alt="Modern workspace essentials" layout="fill" objectFit="cover" className="grayscale" />
           </motion.div>
         </div>
       </section>
@@ -90,6 +90,64 @@ export default function LandingPage() {
       <section id="shop" className="py-24">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {products.length === 0 && (
+              <>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="group"
+                >
+                  <div className="relative aspect-[4/5] mb-4 bg-old-money-light product-hover">
+                    <Image
+                      src="/img/image-3.jpg"
+                      alt="Premium work bag"
+                      layout="fill"
+                      objectFit="cover"
+                      className="group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <h3 className="text-lg font-light mb-1">Essential Work Bag</h3>
+                  <p className="text-old-money">$249</p>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="group"
+                >
+                  <div className="relative aspect-[4/5] mb-4 bg-old-money-light product-hover">
+                    <Image
+                      src="/img/image-4.jpg"
+                      alt="Professional laptop sleeve"
+                      layout="fill"
+                      objectFit="cover"
+                      className="group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <h3 className="text-lg font-light mb-1">Laptop Sleeve</h3>
+                  <p className="text-old-money">$89</p>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="group"
+                >
+                  <div className="relative aspect-[4/5] mb-4 bg-old-money-light product-hover">
+                    <Image
+                      src="/img/image-5.jpg"
+                      alt="Minimalist card holder"
+                      layout="fill"
+                      objectFit="cover"
+                      className="group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <h3 className="text-lg font-light mb-1">Card Holder</h3>
+                  <p className="text-old-money">$49</p>
+                </motion.div>
+              </>
+            )}
             {products.map(({ node: product }, index) => (
               <motion.div
                 key={product.id}
@@ -117,7 +175,7 @@ export default function LandingPage() {
 
       {/* Full Width Image Section */}
       <section className="relative h-screen">
-        <Image src="/placeholder.svg" alt="Lifestyle Image" layout="fill" objectFit="cover" className="grayscale" />
+        <Image src="/img/image-2.jpg" alt="Premium workspace accessories" layout="fill" objectFit="cover" className="grayscale" />
         <div className="absolute inset-0 flex items-center justify-center bg-old-money/30">
           <div className="text-center text-white px-4">
             <h2 className="text-5xl lg:text-7xl font-light mb-6 text-balance">Form meets function</h2>
